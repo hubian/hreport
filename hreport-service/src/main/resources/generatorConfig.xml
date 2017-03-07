@@ -9,7 +9,7 @@
             <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/airtools?useUnicode=true&amp;characterEncoding=utf8" userId="root" password="root">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/hreport?useUnicode=true&amp;characterEncoding=utf8" userId="root" password="root">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
