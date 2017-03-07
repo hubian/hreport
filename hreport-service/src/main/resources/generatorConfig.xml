@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables"	targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/airtools?useUnicode=true&amp;characterEncoding=utf8" userId="root" password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="org.hubian.hreport.service.model.generated" targetProject="../hreport-service/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="resources/mapper" targetProject="src/main">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.hubian.hreport.service.model.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="report_table_schema" domainObjectName="ReportTableSchema">
+            <generatedKey column="table_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="report_field_schema" domainObjectName="ReportFieldSchema">
+            <generatedKey column="field_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="report_data" domainObjectName="ReportData">
+        <generatedKey column="data_id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
